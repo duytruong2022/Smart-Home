@@ -48,7 +48,7 @@ class _BodyLoginState extends State<BodyLogin> {
   @override
   void initState() {
     loginBloc = BlocProvider.of<LoginBloc>(context);
-    email.text = 'truong@gmail.com';
+    email.text = 'dog2@gmail.com';
     password.text = '123456';
     _obscureText = false;
   }
@@ -236,7 +236,23 @@ class _BodyLoginState extends State<BodyLogin> {
                           child: const Text(
                           "Forgot password?",
                           style: TextStyle(fontSize: 16, color: Colors.black45),
-                        ),)
+                        ),),
+                        TextButton(
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const SignUpScreen();
+                                },
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            "SignUp",
+                            style: TextStyle(fontSize: 16, color: Colors.black45, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ],
                     ),
                   ),
